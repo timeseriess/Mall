@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <counter :num1="num" @incr1="incr()"></counter>
+</div>
+
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+
+    //全局组件
+    Vue.component("counter",{
+        template: "<button @click='subIncr'>点我吖，点我加1。{{num1}}</button>",
+        props: ["num1"], //传入自定义的属性名
+        methods: {
+            subIncr(){
+                this.$emit("incr1");
+            }
+        }
+    })
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            num: 0
+        },
+        methods: {
+            incr(){
+                this.num++;
+            }
+        }
+    })
+</script>

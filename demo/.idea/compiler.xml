@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hxq-user" />
+        <module name="hxq-service-consumer" />
+        <module name="hxq-elasticsearch" />
+        <module name="hxq-eureka" />
+        <module name="hxq-zuul" />
+        <module name="dysms-demo" />
+        <module name="hxq-service-provider" />
+        <module name="hxq-springboot" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dysms-demo" target="1.8" />
+      <module name="hxq-elasticsearch" target="1.8" />
+      <module name="hxq-eureka" target="1.8" />
+      <module name="hxq-service-consumer" target="1.8" />
+      <module name="hxq-service-provider" target="1.8" />
+      <module name="hxq-springboot" target="1.8" />
+      <module name="hxq-user" target="1.8" />
+      <module name="hxq-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hxq-elasticsearch" options="-parameters" />
+      <module name="hxq-eureka" options="-parameters" />
+      <module name="hxq-service-consumer" options="-parameters" />
+      <module name="hxq-service-provider" options="-parameters" />
+      <module name="hxq-springboot" options="-parameters" />
+      <module name="hxq-user" options="-parameters" />
+      <module name="hxq-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

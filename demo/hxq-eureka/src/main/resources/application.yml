@@ -1,0 +1,14 @@
+server:
+  port: 10087
+spring:
+  application:
+    name: hxq-eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+
+

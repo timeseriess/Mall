@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .active{
+        color: blue;
+
+    }
+</style>
+<body>
+<!--vue对象的html模板-->
+<div id="app">
+
+    <input type="text" v-model="search">
+    <hr>
+    <div>{{birth1}}</div>
+    <hr>
+    <input type="text" v-model="store">
+    <input type="button" v-bind:class="{active: store>0}" value="加入购物车">
+    <hr>
+    <!--注意：else要紧跟if-->
+    <input type="button" v-bind:value="value" @click="random=Math.random()">{{random}}<br>
+    <span v-if="random>0.75">你看到我了说明我是大于0.75</span>
+    <span v-else-if="random>0.5">你看到我了说明我是大于0.5</span>
+    <span v-else-if="random>0.25">你看到我了说明我是大于0.25</span>
+    <span v-else>你看到我了说明我是0</span><br>
+
+    <hr>
+    <input type="button" value="点我吖" @click="show=!show"><br>
+    <span v-if="show">你看到我了说明我是true,if</span><br>
+    <span v-show="show">你看到我了说明我是true,show</span><br>
+    <hr>
+    <!--遍历对象-->
+    <ul>
+        <li v-for="(val,key,index) in user" :key="index">{{index+1}}.{{key}}:{{val}}</li>
+    </ul>
+    <hr>
+    <!--遍历数组-->
+    <ul>
+        <li v-if="user.gender=='女'" v-for="(user,index) in users" :key="index">{{index+1}}.{{user.name}}-{{user.gender}}-{{user.age}}</li>
+    </ul>
+    <hr>
+    <input type="checkbox" value="ios" v-model="language">ios<br>
+    <input type="checkbox" value="java" v-model="language">java<br>
+    <input type="checkbox" value="php" v-model="language">php<br>
+    您选择了：{{language.join(",")}}<hr>
+    <!--双向绑定 v-model=数据模型-->
+    <input type="text" v-model="num" @keyup.13="submit">
+    <!-- v-on:事件名=js表达式/方法名 -->
+    <input type="button" value="点我吖" @contextMenu.prevent="incr">
+    <!--花括号：js表达式-->
+    <h1>大家好，我是{{name}},有{{sum()}}位妹子迷恋我</h1>
+    <h1>大家好，我是<span v-text="name">张学友</span>,有{{sum()}}位妹子迷恋我</h1>
+</div>
+
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    //初始化一个vue实例
+    const app = new Vue({
+        el: "#app", //element, 值是一个选择器
+        data: { //定义数据模型
+            name: "刘德华",
+            num: 100,
+            language: [],
+            users:[
+                {name:'柳岩', gender:'女', age: 21},
+                {name:'虎哥', gender:'男', age: 30},
+                {name:'范冰冰', gender:'女', age: 24},
+                {name:'刘亦菲', gender:'女', age: 18},
+                {name:'古力娜扎', gender:'女', age: 25}
+            ],
+            user:{name:'柳岩', gender:'女', age: 21},
+            show: true,
+            random: 0,
+            value: "点我呀",
+            store: 0,
+            birthday: 1687459872549,
+            search: ""
+        },
+        watch: {
+            search(newVal,oldval){
+                console.log(newVal,oldval);
+            }
+        },
+        methods: {//定义方法
+            incr(){
+
+                this.num++;
+            },
+            sum(){
+                return this.num+10000;
+            },
+            submit() {
+                console.log("你已经提交了！");
+            },
+            birth(){
+                const date = new Date(this.birthday);
+                return date.getFullYear()+"年"+date.getMonth()+"月"+date.getDay()+"日";
+            }
+        },
+        computed: { //计算属性，里面定义的也是方法，但是这些方法必须有返回值，计算属性也可以向数据模型一样使用
+            birth1(){
+                const date = new Date(this.birthday);
+                return date.getFullYear()+"年"+date.getMonth()+"月"+date.getDay()+"日";
+            }
+        },
+        created(){
+            //ajax
+            this.num = 10000;
+        }
+
+    })
+</script>

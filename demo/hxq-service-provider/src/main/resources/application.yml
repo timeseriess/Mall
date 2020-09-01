@@ -1,0 +1,19 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:mysql:///mybatis1?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: haoxingqi497
+  application:
+    name: service-provider
+mybatis:
+  type-aliases-package: cn.hxq.service.pojo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    register-with-eureka: true #服务提供方启动时，会检测该参数是否为true,true就注册给eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 #心跳时间
+    lease-expiration-duration-in-seconds: 15 #过期时间

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dysms-demo/dysms-demo.iml" filepath="$PROJECT_DIR$/dysms-demo/dysms-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-elasticsearch/hxq-elasticsearch.iml" filepath="$PROJECT_DIR$/hxq-elasticsearch/hxq-elasticsearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-eureka/hxq-eureka.iml" filepath="$PROJECT_DIR$/hxq-eureka/hxq-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-service-consumer/hxq-service-consumer.iml" filepath="$PROJECT_DIR$/hxq-service-consumer/hxq-service-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-service-provider/hxq-service-provider.iml" filepath="$PROJECT_DIR$/hxq-service-provider/hxq-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-springboot/hxq-springboot.iml" filepath="$PROJECT_DIR$/hxq-springboot/hxq-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-user/hxq-user.iml" filepath="$PROJECT_DIR$/hxq-user/hxq-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hxq-zuul/hxq-zuul.iml" filepath="$PROJECT_DIR$/hxq-zuul/hxq-zuul.iml" />
+    </modules>
+  </component>
+</project>
